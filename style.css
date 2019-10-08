@@ -1,0 +1,268 @@
+html{
+       overflow-x:  hidden;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;  
+}
+header{
+    z-index: 100;
+    background: rgb(196,196,196);
+    background: -moz-linear-gradient(top,  rgba(196,196,196,1) 0%, rgba(216,216,216,1) 25%, rgba(226,226,226,1) 54%, rgba(244,244,244,1) 97%);
+    background: -webkit-linear-gradient(top,  rgba(196,196,196,1) 0%,rgba(216,216,216,1) 25%,rgba(226,226,226,1) 54%,rgba(244,244,244,1) 97%);
+    background: linear-gradient(to bottom,  rgba(196,196,196,1) 0%,rgba(216,216,216,1) 25%,rgba(226,226,226,1) 54%,rgba(244,244,244,1) 97%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c4c4c4', endColorstr='#f4f4f4',GradientType=0 );
+    position: fixed;
+    top:0;
+    height: auto;
+    width: 100%; 
+    
+}
+.logo{
+    width: 100px;
+    height: 70px;
+}
+.logo img{
+   margin: auto; 
+    width: 100px;
+    height: 40px;
+    margin-top: 15px;
+    opacity: 0.7; /*непрозрачность*/
+    
+}
+.header-container{
+    width: 90%;
+    display: flex;
+   
+    margin: auto;   
+    justify-content: space-between; 
+   
+}
+header a {
+	position: relative;
+	cursor: pointer;
+	line-height: 1.5; /*задаём высоту строки*/
+	text-decoration: none; /*убираем подчёркивание*/
+}
+header a:after {
+	display: block;
+	position: absolute;
+	left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+	width: 0;/*задаём длинну линии до наведения курсора*/
+	height: 1.5px; /*задаём ширину линии*/
+	background-color: gray; /*задаём цвет линии*/
+	content: "";
+    
+	transition: width 0.25s ease-out; /*задаём время анимации*/
+}
+header a:hover{
+    opacity: 0.76;
+}
+header a:hover:after {
+	width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+}
+
+nav{
+    align-self: center;
+    margin: 0; 
+}
+header ul{
+    list-style: none;
+    position: relative;
+    display: inline-flex;
+}
+
+#meny-checkbox{
+    display: none;
+}
+.first-meny {
+    box-sizing: border-box;
+    position: relative;
+    color: black;
+    text-decoration: none;
+    margin-right: 40px; 
+}
+
+
+.bg{
+    margin: 0;
+    background-image: url(images/Awards-Inside-RCI-2000x1250_0.jpg);
+    background-size: cover;
+    position: fixed;
+    left: 0; right: 0; top: 0; bottom: 0;
+}
+wrapper{
+    width: 100%;
+    
+}
+.content{
+    height: auto;
+    width: 100%;   
+}
+.first{
+    padding-bottom: 400px;
+    position: relative;    
+}
+h1{
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    padding-top: 20%;
+    font-size: 4em;
+    color: #e5ebee;
+    opacity: 0.7;
+    text-shadow: -4px 5px 6px black;
+}
+.second{
+    position: relative;
+    background-color: whitesmoke;
+    height: 100vh;
+}
+h2{
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    padding-top: 80px;
+    font-size: 50px;
+    color: gray;
+    font-weight: 10;
+    
+    
+}
+
+.foots{
+    padding-top: 80px;
+    width: 100%;
+    
+   
+}
+.foots ul{
+    list-style: none;
+   
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row; /*в ряд*/
+    justify-content: space-around;
+    padding-left: 0;
+}
+.foots li{
+    
+}
+.foots img{
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    box-shadow: 5px 4px 15px 0px grey;
+}
+.foots img:hover{
+    opacity: 0.8;
+}
+.foots p{
+    margin-top: 45px;
+    text-align: center;
+    
+    
+}
+.foots li {
+	position: relative;
+	cursor: pointer;
+	line-height: 1.5; 
+	text-decoration: none; 
+    width: 200px;
+}
+.foots li:after {
+	display: block;
+	position: absolute;
+	left: 0; 
+	width: 0;
+	height: 1.5px; 
+	background-color: gray; 
+	content: "";
+    
+	transition: width 0.25s ease-out; 
+}
+
+.foots li:hover:after {
+	width: 100%; 
+}
+
+
+@media screen and ( max-width: 850px ){
+    
+    .header-container{
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+    }
+    .main-meny{
+        display: none;
+    }
+    .main-meny li{
+        width: 100%;
+        display: block;
+        font-size: 15px;
+        
+        
+    }
+    .main-meny a{
+        display: block;
+        padding: 12px;
+      
+    }
+    .toggle-button{
+        display: block;
+        position: absolute;
+        top:25px;
+        right: 30px;
+        text-align: right;
+        cursor: pointer;
+        color: black;
+    }
+    .toggle-button:after{
+        content: attr(data-open);
+        display: block;
+    }
+    #meny-checkbox:checked + nav[role="navigation"] .main-meny{
+        display: block;
+    }
+    #meny-checkbox:checked + nav[role="navigation"] .toggle-button:after{
+        content: attr(data-close);
+    }
+    .header-container a{
+        margin: auto;        
+        text-align: center;
+    }
+    .main-meny{
+        position: relative;
+        height: 290px;
+        
+        
+        width: 300px;
+        right: 150px;
+        padding: 0;
+        margin: 0;
+
+    }
+    nav{
+        padding-top: 100px;
+        align-self: auto;
+    }
+    .second{
+        height: auto;
+    }
+    .foots{
+        
+        width: 100%;
+    }
+    .foots ul{
+        position: relative;
+        width: 220px;
+       padding-top: 120px;
+        padding-bottom: 50px;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    
+        flex-direction: column;
+    }
+}
